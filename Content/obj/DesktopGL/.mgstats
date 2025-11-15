@@ -1,2 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/pixelfont.spritefont","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/pixelfont.xnb","FontDescriptionProcessor","SpriteFontContent",2027,136217,0.3148282
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/playertexture.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/playertexture.xnb","TextureProcessor","Texture2DContent",450,16469,0.628883
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/space.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/space.tmx","CopyItem","File",14905,14905,0.0007906
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/tileset.tsx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/tileset.tsx","CopyItem","File",226,226,0.0004123
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/tilesmap.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/tilesmap.png","CopyItem","File",12218,12218,0.0002494

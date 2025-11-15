@@ -48,8 +48,10 @@ public class Menu : IScene
 
         if(state.IsKeyDown(Keys.Enter) && !_previous.IsKeyDown(Keys.Enter))
         {
-            if(_selected == 1)
+            if(_selected == 0)
             {
+                _sceneManager.ChangeScene("startGame");
+            } else {
                 GameData.Quit = true;
             }
         }

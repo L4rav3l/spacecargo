@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Iwm9Em21yE4=",
+  "dgSpecHash": "Nv8LmYmK1Qc=",
   "success": true,
   "projectFilePath": "/home/marcellh/Dokumentumok/SpaceCargo/SpaceCargo.csproj",
   "expectedPackageFiles": [
@@ -11,9 +11,10 @@
     "/home/marcellh/.nuget/packages/nvorbis/0.10.4/nvorbis.0.10.4.nupkg.sha512",
     "/home/marcellh/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/home/marcellh/.nuget/packages/system.valuetuple/4.5.0/system.valuetuple.4.5.0.nupkg.sha512",
-    "/home/marcellh/.nuget/packages/microsoft.netcore.app.ref/8.0.20/microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
+    "/home/marcellh/.nuget/packages/tiledsharp/1.0.1/tiledsharp.1.0.1.nupkg.sha512",
     "/home/marcellh/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512",
-    "/home/marcellh/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.20/microsoft.netcore.app.host.linux-x64.8.0.20.nupkg.sha512"
+    "/home/marcellh/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.20/microsoft.netcore.app.host.linux-x64.8.0.20.nupkg.sha512",
+    "/home/marcellh/.nuget/packages/microsoft.netcore.app.ref/8.0.20/microsoft.netcore.app.ref.8.0.20.nupkg.sha512"
   ],
   "logs": []
 }

@@ -32,3 +32,9 @@
 /home/marcellh/Dokumentumok/SpaceCargo/obj/Debug/net8.0/SpaceCargo.genruntimeconfig.cache
 /home/marcellh/Dokumentumok/SpaceCargo/obj/Debug/net8.0/ref/SpaceCargo.dll
 /home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/pixelfont.xnb
+/home/marcellh/Dokumentumok/SpaceCargo/obj/Debug/net8.0/SpaceCargo.sourcelink.json
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/TiledSharp.dll
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/space.tmx
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/tileset.tsx
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/tilesmap.png
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/playertexture.xnb

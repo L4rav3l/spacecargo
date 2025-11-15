@@ -5,8 +5,10 @@
   <Config />
   <SourceFiles>
     <File>/home/marcellh/Dokumentumok/SpaceCargo/Content/pixelfont.spritefont</File>
+    <File>/home/marcellh/Dokumentumok/SpaceCargo/Content/playertexture.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
