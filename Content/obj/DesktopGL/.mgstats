@@ -1,8 +1,10 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/empty-fuel.mp3","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/empty-fuel.xnb","SongProcessor","SongContent",22669,128,0.5180809
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/explosion.mp3","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/explosion.xnb","SongProcessor","SongContent",19968,127,0.0819532
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/pixelfont.spritefont","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/pixelfont.xnb","FontDescriptionProcessor","SpriteFontContent",2027,136217,0.3148282
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/playertexture.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/playertexture.png","CopyItem","File",522,522,0.0015961
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/playertexture2.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/playertexture2.png","CopyItem","File",937,937,0.0009022
-"/home/marcellh/Dokumentumok/SpaceCargo/Content/poststation.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/poststation.tmx","CopyItem","File",573,573,0.0015564
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/poststation.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/poststation.tmx","CopyItem","File",5947,5947,0.0007804
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/space.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/space.tmx","CopyItem","File",15258,15258,0.0002484
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/tileset.tsx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/tileset.tsx","CopyItem","File",227,227,0.0002039
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/tilesmap.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/tilesmap.png","CopyItem","File",20333,20333,0.0007411

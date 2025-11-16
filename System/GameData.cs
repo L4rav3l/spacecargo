@@ -11,4 +11,6 @@ public static class GameData
     public static string Door {get;set;}
     public static float Fuel {get;set;}
     public static bool InSpace {get;set;}
+    public static bool Move {get;set;}
+    public static int[] Code {get;set;}
 }

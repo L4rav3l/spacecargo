@@ -15,6 +15,8 @@ public class StartGame : IScene
     private SpriteFont _pixelfont;
     private Texture2D _paper;
 
+    private Random rnd;
+
     public StartGame(GraphicsDevice _graphics, SceneManager _sceneManager, ContentManager _contentManager)
     {
         this._graphics = _graphics;
@@ -36,12 +38,29 @@ public class StartGame : IScene
 
         if(state.IsKeyDown(Keys.E))
         {
+            GameData.Package = false;
+            GameData.PackageNum = 0;
+            GameData.Base = "";
+            GameData.Door = "";
+            GameData.Fuel = 0;
+            GameData.InSpace = false;
+            GameData.Code = new int[4];
+            GameData.Move = true;
+
+            rnd = new Random();
+
+            for(int i = 0; i < 4; i++)
+            {
+                GameData.Code[i] = rnd.Next(1000, 9999);
+                Console.WriteLine(GameData.Code[i]);
+            }
+
             _sceneManager.AddScene(new Space(_graphics, _sceneManager, _contentManager), "space");
             _sceneManager.AddScene(new Station(_graphics, _sceneManager, _contentManager), "station");
             _sceneManager.AddScene(new PostStation(_graphics, _sceneManager, _contentManager), "poststation");
             _sceneManager.AddScene(new EndFuel(_graphics, _sceneManager, _contentManager), "end-fuel");
             _sceneManager.AddScene(new EndMaffia(_graphics, _sceneManager, _contentManager), "end-maffia");
-            _sceneManager.ChangeScene("end-fuel");
+            _sceneManager.ChangeScene("poststation");
         }
     }
 

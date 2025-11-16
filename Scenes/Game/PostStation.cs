@@ -19,7 +19,10 @@ public class PostStation : IScene
 
     private Texture2D TileSet;
     private Texture2D playertexture2;
+    private Texture2D _codes;
     private SpriteFont _pixelfont;
+
+    private bool _panel;
 
     private TmxMap map;
     private List<Rectangle> solidTiles;
@@ -72,6 +75,9 @@ public class PostStation : IScene
         TileSet = _contentManager.Load<Texture2D>("tilesmap");
         playertexture2 = _contentManager.Load<Texture2D>("playertexture2");
         _pixelfont = _contentManager.Load<SpriteFont>("pixelfont");
+
+        _codes = new Texture2D(_graphics, 1, 1);
+        _codes.SetData(new [] {Color.White});
 
         solidTiles = LoadCollisionObjects("Content/poststation.tmx");
 
@@ -127,9 +133,21 @@ public class PostStation : IScene
 
         if(Vector2.Distance(player.Position, new Vector2(1248, 1501)) < 64)
         {
-            GameData.InSpace = true;
             GameData.Fuel = 100;
+            GameData.InSpace = true;
             _sceneManager.ChangeScene("space");
+        }
+
+        if(Vector2.Distance(player.Position, new Vector2(1758, 1312)) < 64 && state.IsKeyDown(Keys.E))
+        {
+            GameData.Move = false;
+            _panel = true;
+        }
+
+        if(state.IsKeyDown(Keys.Escape))
+        {
+            GameData.Move = true;
+            _panel = false;
         }
     }
 
@@ -181,5 +199,12 @@ public class PostStation : IScene
         }
 
         player.Draw(spriteBatch, playertexture2, camera);
+
+        if(_panel == true)
+        {
+            spriteBatch.Draw(_codes, new Rectangle((Width / 2) - 300, (Height / 2) - 350, 600, 700), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+
+            spriteBatch.DrawString(_pixelfont, $"A Code: {GameData.Code[0]}\nB Code: {GameData.Code[1]}\nC Code: {GameData.Code[2]}\nD Code: {GameData.Code[3]}", new Vector2((Width / 2) - 250, (Height / 2) - 300), Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.3f);
+        }
     }
 }

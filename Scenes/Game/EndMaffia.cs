@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
 
 namespace SpaceCargo;
 
@@ -13,6 +14,9 @@ public class EndMaffia : IScene
 
     private SpriteFont _pixelfont;
     private Texture2D _paper;
+    private Song _bomb;
+
+    private bool _end = false;
 
     public EndMaffia(GraphicsDevice _graphics, SceneManager _sceneManager, ContentManager _contentManager)
     {
@@ -24,6 +28,7 @@ public class EndMaffia : IScene
     public void LoadContent()
     {
         _pixelfont = _contentManager.Load<SpriteFont>("pixelfont");
+        _bomb = _contentManager.Load<Song>("explosion");
 
         _paper = new Texture2D(_graphics, 1, 1);
         _paper.SetData(new [] {Color.White});
@@ -36,6 +41,12 @@ public class EndMaffia : IScene
         if(state.IsKeyDown(Keys.E))
         {
             _sceneManager.ChangeScene("menu");
+        }
+
+        if(!_end)
+        {
+            _end = true;
+            MediaPlayer.Play(_bomb);
         }
     }
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpaceCargo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f02067a8da7a6bbbde93486c79e13c8827da3ca6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6932480cc7625b69dd72dbcc7690690c1ad133f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpaceCargo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpaceCargo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

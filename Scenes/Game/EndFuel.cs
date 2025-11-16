@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 
 namespace SpaceCargo;
@@ -14,6 +15,9 @@ public class EndFuel : IScene
 
     private SpriteFont _pixelfont;
     private Texture2D _paper;
+    private Song _fuel;
+
+    private bool _end = false;
 
     public EndFuel(GraphicsDevice _graphics, SceneManager _sceneManager, ContentManager _contentManager)
     {
@@ -25,6 +29,7 @@ public class EndFuel : IScene
     public void LoadContent()
     {
         _pixelfont = _contentManager.Load<SpriteFont>("pixelfont");
+        _fuel = _contentManager.Load<Song>("empty-fuel");
 
         _paper = new Texture2D(_graphics, 1, 1);
         _paper.SetData(new [] {Color.White});
@@ -38,6 +43,12 @@ public class EndFuel : IScene
         {
             GameData.InSpace = false;
             _sceneManager.ChangeScene("menu");
+        }
+
+        if(!_end)
+        {
+            MediaPlayer.Play(_fuel);
+            _end = true;
         }
     }
 

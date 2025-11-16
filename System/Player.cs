@@ -29,6 +29,9 @@ public class Player
         float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
         Vector2 oldPos = Position;
 
+        if(GameData.Move == true)
+        {
+
             Vector2 movement = Vector2.Zero;
             if (kb.IsKeyDown(Keys.W))
             {
@@ -74,11 +77,13 @@ public class Player
                     movement.X += 1;
                 }
             }
+        
 
             if (movement != Vector2.Zero)
                 movement.Normalize();
 
             Position += movement * Speed * dt;
+        }
 
         foreach (var solid in solidTiles)
         {
@@ -117,7 +122,7 @@ public class Player
             Vector2.Zero,
             1f,
             SpriteEffects.None,
-            0.2f
+            0.1f
         );
     }
 }

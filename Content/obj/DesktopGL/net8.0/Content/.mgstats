@@ -1,8 +1,10 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/empty-fuel.mp3","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/empty-fuel.xnb","SongProcessor","SongContent",22669,128,1.4083775
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/explosion.mp3","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/explosion.xnb","SongProcessor","SongContent",19968,127,0.5963954
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/pixelfont.spritefont","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/pixelfont.xnb","FontDescriptionProcessor","SpriteFontContent",2027,136217,0.3706328
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/playertexture.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/playertexture.png","CopyItem","File",522,522,0.002669
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/playertexture2.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/playertexture2.png","CopyItem","File",937,937,0.0010875
-"/home/marcellh/Dokumentumok/SpaceCargo/Content/poststation.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/poststation.tmx","CopyItem","File",5947,5947,0.0009264
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/poststation.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/poststation.tmx","CopyItem","File",6072,6072,0.0008126
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/space.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/space.tmx","CopyItem","File",15258,15258,0.001051
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/tileset.tsx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/tileset.tsx","CopyItem","File",227,227,0.0003454
-"/home/marcellh/Dokumentumok/SpaceCargo/Content/tilesmap.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/tilesmap.png","CopyItem","File",20333,20333,0.0009015
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/tilesmap.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/tilesmap.png","CopyItem","File",20493,20493,0.0003251

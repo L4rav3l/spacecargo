@@ -4,9 +4,13 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/home/marcellh/Dokumentumok/SpaceCargo/Content/empty-fuel.mp3</File>
+    <File>/home/marcellh/Dokumentumok/SpaceCargo/Content/explosion.mp3</File>
     <File>/home/marcellh/Dokumentumok/SpaceCargo/Content/pixelfont.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

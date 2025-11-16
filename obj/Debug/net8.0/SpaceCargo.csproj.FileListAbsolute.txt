@@ -40,3 +40,7 @@
 /home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/playertexture2.png
 /home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/playertexture.png
 /home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/poststation.tmx
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/empty-fuel.ogg
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/empty-fuel.xnb
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/explosion.ogg
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/explosion.xnb
