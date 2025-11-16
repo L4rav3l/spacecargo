@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace SpaceCargo;
 
@@ -38,6 +39,11 @@ public class Game1 : Game
         if(GameData.Quit == true)
         {
             Exit();
+        }
+
+        if(GameData.Fuel <= 0 && GameData.InSpace)
+        {
+            _sceneManager.ChangeScene("end-fuel");
         }
 
         base.Update(gameTime);

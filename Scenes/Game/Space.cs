@@ -87,6 +87,7 @@ public class Space : IScene
             {
                 GameData.Station = "A";
                 GameData.BackStation = true;
+                GameData.InSpace = false;
                 _sceneManager.ChangeScene("station");
             }
 
@@ -94,6 +95,7 @@ public class Space : IScene
             {
                 GameData.Station = "B";
                 GameData.BackStation = true;
+                GameData.InSpace = false;
                 _sceneManager.ChangeScene("station");
             }
 
@@ -101,6 +103,7 @@ public class Space : IScene
             {
                 GameData.Station = "C";
                 GameData.BackStation = true;
+                GameData.InSpace = false;
                 _sceneManager.ChangeScene("station");
             }
 
@@ -108,12 +111,14 @@ public class Space : IScene
             {
                 GameData.Station = "D";
                 GameData.BackStation = true;
+                GameData.InSpace = false;
                 _sceneManager.ChangeScene("station");
             }
 
             if(Vector2.Distance(player.Position, new Vector2(2270, 2141)) <= 64)
             {
                 GameData.BackStation = true;
+                GameData.InSpace = false;
                 _sceneManager.ChangeScene("poststation");
             }
         }
@@ -167,6 +172,8 @@ public class Space : IScene
 
             spriteBatch.DrawString(_pixelfont, $"{GameData.Base} Station, {GameData.Door} Door", new Vector2((Width / 2) - (ObjectM.X / 2), (ObjectM.Y / 2) + 30), Color.White, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
         }
+
+        spriteBatch.DrawString(_pixelfont, $"{Math.Floor(GameData.Fuel)}% Fuel", new Vector2(100, 50), Color.White);
 
     }
 }

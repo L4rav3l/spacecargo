@@ -89,6 +89,7 @@ public class Station : IScene
 
         if(Vector2.Distance(player.Position, new Vector2(154, 884)) <= 64)
         {
+            GameData.InSpace = true;
             _sceneManager.ChangeScene("space");
         }
 

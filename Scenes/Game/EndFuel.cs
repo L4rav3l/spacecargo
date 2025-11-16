@@ -6,7 +6,7 @@ using System;
 
 namespace SpaceCargo;
 
-public class StartGame : IScene
+public class EndFuel : IScene
 {
     private GraphicsDevice _graphics;
     private SceneManager _sceneManager;
@@ -15,32 +15,29 @@ public class StartGame : IScene
     private SpriteFont _pixelfont;
     private Texture2D _paper;
 
-    public StartGame(GraphicsDevice _graphics, SceneManager _sceneManager, ContentManager _contentManager)
+    public EndFuel(GraphicsDevice _graphics, SceneManager _sceneManager, ContentManager _contentManager)
     {
         this._graphics = _graphics;
         this._sceneManager = _sceneManager;
         this._contentManager = _contentManager;
-            
-        _paper = new Texture2D(_graphics, 1, 1);
-        _paper.SetData(new [] {Color.White});
     }
 
     public void LoadContent()
     {
         _pixelfont = _contentManager.Load<SpriteFont>("pixelfont");
+
+        _paper = new Texture2D(_graphics, 1, 1);
+        _paper.SetData(new [] {Color.White});
     }
 
-    public void Update(GameTime gameTime)
+    public void Update(GameTime GameTime)
     {
         KeyboardState state = Keyboard.GetState();
 
         if(state.IsKeyDown(Keys.E))
         {
-            _sceneManager.AddScene(new Space(_graphics, _sceneManager, _contentManager), "space");
-            _sceneManager.AddScene(new Station(_graphics, _sceneManager, _contentManager), "station");
-            _sceneManager.AddScene(new PostStation(_graphics, _sceneManager, _contentManager), "poststation");
-            _sceneManager.AddScene(new EndFuel(_graphics, _sceneManager, _contentManager), "end-fuel");
-            _sceneManager.ChangeScene("poststation");
+            GameData.InSpace = false;
+            _sceneManager.ChangeScene("menu");
         }
     }
 
@@ -53,8 +50,11 @@ public class StartGame : IScene
 
         spriteBatch.Draw(_paper, new Rectangle((Width / 2) - 300, (Height / 2) - 350, 600, 700), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
 
-        spriteBatch.DrawString(_pixelfont, "Hello Michael,\nWe accepted your work\napplication Your first\nworkday is Monday at 8:00 AM.\n\nDon't be late.\n\nDonald Mayfield\nSpaceCargo - HR", new Vector2(Width / 2 - 250, (Height / 2) - 300), Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
-        
+        Vector2 ReasonM = _pixelfont.MeasureString("You didn't have enough fuel, and when\n they came to help you, you\ndied from radiation.") * 0.75f;
+        Vector2 Reason = new Vector2((Width / 2) - 250, (Height / 2) - 300);
+
+        spriteBatch.DrawString(_pixelfont, "You didn't have enough fuel,\nand when they cameto help\nyou, you died from radiation.", Reason, Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.1f);
+    
         Vector2 NextM = _pixelfont.MeasureString("Press E button") * 0.75f;
         spriteBatch.DrawString(_pixelfont, "Press E button", new Vector2((Width / 2) - (NextM.X / 2), ((Height / 4) * 3) - (NextM.Y / 2)), Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
     }
