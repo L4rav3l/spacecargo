@@ -50,10 +50,9 @@ public class EndFuel : IScene
 
         spriteBatch.Draw(_paper, new Rectangle((Width / 2) - 300, (Height / 2) - 350, 600, 700), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
 
-        Vector2 ReasonM = _pixelfont.MeasureString("You didn't have enough fuel, and when\n they came to help you, you\ndied from radiation.") * 0.75f;
         Vector2 Reason = new Vector2((Width / 2) - 250, (Height / 2) - 300);
 
-        spriteBatch.DrawString(_pixelfont, "You didn't have enough fuel,\nand when they cameto help\nyou, you died from radiation.", Reason, Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.1f);
+        spriteBatch.DrawString(_pixelfont, "You didn't have enough fuel,\nand when they cameto help\nyou, you died from radiation.\nEnd 2", Reason, Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.1f);
     
         Vector2 NextM = _pixelfont.MeasureString("Press E button") * 0.75f;
         spriteBatch.DrawString(_pixelfont, "Press E button", new Vector2((Width / 2) - (NextM.X / 2), ((Height / 4) * 3) - (NextM.Y / 2)), Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);

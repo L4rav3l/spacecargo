@@ -46,6 +46,11 @@ public class Game1 : Game
             _sceneManager.ChangeScene("end-fuel");
         }
 
+        if(GameData.PackageNum == 5)
+        {
+            _sceneManager.ChangeScene("end-maffia");
+        }
+
         base.Update(gameTime);
     }
 

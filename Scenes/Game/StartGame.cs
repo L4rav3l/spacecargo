@@ -40,7 +40,8 @@ public class StartGame : IScene
             _sceneManager.AddScene(new Station(_graphics, _sceneManager, _contentManager), "station");
             _sceneManager.AddScene(new PostStation(_graphics, _sceneManager, _contentManager), "poststation");
             _sceneManager.AddScene(new EndFuel(_graphics, _sceneManager, _contentManager), "end-fuel");
-            _sceneManager.ChangeScene("poststation");
+            _sceneManager.AddScene(new EndMaffia(_graphics, _sceneManager, _contentManager), "end-maffia");
+            _sceneManager.ChangeScene("end-fuel");
         }
     }
 
