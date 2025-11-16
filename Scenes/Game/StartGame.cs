@@ -37,7 +37,9 @@ public class StartGame : IScene
         if(state.IsKeyDown(Keys.E))
         {
             _sceneManager.AddScene(new Space(_graphics, _sceneManager, _contentManager), "space");
-            _sceneManager.ChangeScene("space");
+            _sceneManager.AddScene(new Station(_graphics, _sceneManager, _contentManager), "station");
+            _sceneManager.AddScene(new PostStation(_graphics, _sceneManager, _contentManager), "poststation");
+            _sceneManager.ChangeScene("poststation");
         }
     }
 

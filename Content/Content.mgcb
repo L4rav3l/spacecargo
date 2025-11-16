@@ -21,16 +21,13 @@
 /build:pixelfont.spritefont
 
 #begin playertexture.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:playertexture.png
+/copy:playertexture.png
+
+#begin playertexture2.png
+/copy:playertexture2.png
+
+#begin poststation.tmx
+/copy:poststation.tmx
 
 #begin space.tmx
 /copy:space.tmx

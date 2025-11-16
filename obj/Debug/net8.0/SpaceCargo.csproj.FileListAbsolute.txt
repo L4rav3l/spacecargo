@@ -37,4 +37,6 @@
 /home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/space.tmx
 /home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/tileset.tsx
 /home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/tilesmap.png
-/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/playertexture.xnb
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/playertexture2.png
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/playertexture.png
+/home/marcellh/Dokumentumok/SpaceCargo/bin/Debug/net8.0/Content/poststation.tmx

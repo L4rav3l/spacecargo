@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using TiledSharp;
+using System;
 
 namespace SpaceCargo;
 
@@ -60,7 +61,7 @@ public class Station : IScene
 
     public void LoadContent()
     {
-        player = new Player(new Vector2(255,861));
+        player = new Player(new Vector2(257, 864));
         camera = new Camera2D(_graphics.Viewport);
 
         map = new TmxMap("Content/spacestation.tmx");
@@ -75,6 +76,19 @@ public class Station : IScene
     {
         player.Update(gameTime, solidTiles, camera);
         camera.Follow(player.Position, new Vector2(map.Width * 64, map.Height * 64));
+
+        if(GameData.BackStation == true)
+        {
+            player.Position = new Vector2(257, 864);
+            GameData.BackStation = false;
+        }
+
+        if(Vector2.Distance(player.Position, new Vector2(154, 884)) <= 64)
+        {
+            _sceneManager.ChangeScene("space");
+        }
+
+        Console.WriteLine(player.Position);
     }
 
     public void Draw(SpriteBatch spriteBatch)

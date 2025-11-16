@@ -1,14 +1,14 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
-using System.Collections.Generic;
 using TiledSharp;
+using System.Collections.Generic;
 using System;
 
 namespace SpaceCargo;
 
-public class Space : IScene
+public class PostStation : IScene
 {
     private GraphicsDevice _graphics;
     private SceneManager _sceneManager;
@@ -16,13 +16,15 @@ public class Space : IScene
 
     private Camera2D camera;
     private Player player;
-    
+
     private Texture2D TileSet;
-    private Texture2D playerTexture;
+    private Texture2D playertexture2;
     private SpriteFont _pixelfont;
 
     private TmxMap map;
     private List<Rectangle> solidTiles;
+
+    private Random random;
 
     public List<Rectangle> LoadCollisionObjects(string mapFilePath)
     {
@@ -53,7 +55,7 @@ public class Space : IScene
         return solidTiles;
     }
 
-    public Space(GraphicsDevice _graphics, SceneManager _sceneManager, ContentManager _contentManager)
+    public PostStation(GraphicsDevice _graphics, SceneManager _sceneManager, ContentManager _contentManager)
     {
         this._graphics = _graphics;
         this._sceneManager = _sceneManager;
@@ -62,76 +64,86 @@ public class Space : IScene
 
     public void LoadContent()
     {
-        player = new Player(new Vector2(2270, 2140));
+        player = new Player(new Vector2(1372, 1499));
         camera = new Camera2D(_graphics.Viewport);
 
-        map = new TmxMap("Content/space.tmx");
+        map = new TmxMap("Content/poststation.tmx");
 
         TileSet = _contentManager.Load<Texture2D>("tilesmap");
-        playerTexture = _contentManager.Load<Texture2D>("playertexture");
-
-        solidTiles = LoadCollisionObjects("Content/space.tmx");
+        playertexture2 = _contentManager.Load<Texture2D>("playertexture2");
         _pixelfont = _contentManager.Load<SpriteFont>("pixelfont");
+
+        solidTiles = LoadCollisionObjects("Content/poststation.tmx");
+
+        random = new Random();
     }
 
     public void Update(GameTime gameTime)
-    {   
+    {
         player.Update(gameTime, solidTiles, camera);
         camera.Follow(player.Position, new Vector2(map.Width * 64, map.Height * 64));
 
-        KeyboardState state = Keyboard.GetState();
-
-        if(state.IsKeyDown(Keys.E))
+        if(GameData.BackStation == true)
         {
-            if(Vector2.Distance(player.Position, new Vector2(542, 3484)) <= 64)
+            player.Position = new Vector2(1372, 1499);
+            GameData.BackStation = false;
+        }
+
+        KeyboardState state = Keyboard.GetState();
+        
+        if(Vector2.Distance(player.Position, new Vector2(1631, 1316)) < 64 && state.IsKeyDown(Keys.E) && GameData.Package == false)
+        {
+            int station = random.Next(1000,4999) / 1000;
+            int door = random.Next(6000,9999) / 1000;
+
+            if(station == 0)
             {
-                GameData.Station = "A";
-                GameData.BackStation = true;
-                _sceneManager.ChangeScene("station");
+                GameData.Base = "A";
+            } else if(station == 1)
+            {
+                GameData.Base = "B";
+            } else if(station == 2)
+            {
+                GameData.Base = "C";
+            } else {
+                GameData.Base = "D";
+            }
+            
+            if(door == 6)
+            {
+                GameData.Door = "A";
+            } else if(door == 7)
+            {
+                GameData.Door = "B";
+            } else if(door == 8)
+            {
+                GameData.Door = "C";
+            } else {
+                GameData.Door = "D";
             }
 
-            if(Vector2.Distance(player.Position, new Vector2(734, 1309)) <= 64)
-            {
-                GameData.Station = "B";
-                GameData.BackStation = true;
-                _sceneManager.ChangeScene("station");
-            }
+            GameData.Package = true;
+        }
 
-            if(Vector2.Distance(player.Position, new Vector2(3550, 733)) <= 64)
-            {
-                GameData.Station = "C";
-                GameData.BackStation = true;
-                _sceneManager.ChangeScene("station");
-            }
-
-            if(Vector2.Distance(player.Position, new Vector2(3230, 3933)) <= 64)
-            {
-                GameData.Station = "D";
-                GameData.BackStation = true;
-                _sceneManager.ChangeScene("station");
-            }
-
-            if(Vector2.Distance(player.Position, new Vector2(2270, 2141)) <= 64)
-            {
-                GameData.BackStation = true;
-                _sceneManager.ChangeScene("poststation");
-            }
+        if(Vector2.Distance(player.Position, new Vector2(1248, 1501)) < 64)
+        {
+            _sceneManager.ChangeScene("space");
         }
     }
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        _graphics.Clear(Color.Black);
-
-        int Width = _graphics.Viewport.Width;
-        int Height = _graphics.Viewport.Height;
-        
         int mapWidth = map.Width;
         int mapHeight = map.Height;
 
-        for(int y = 0; y < mapHeight; y++)
+        int Width = _graphics.Viewport.Width;
+        int Height = _graphics.Viewport.Height;
+
+        _graphics.Clear(Color.Black);
+
+        for (int y = 0; y < mapHeight; y++)
         {
-            for(int x = 0; x < mapWidth; x++)
+            for (int x = 0; x < mapWidth; x++)
             {
                 int i = y * mapWidth + x;
                 if (i >= map.Layers[0].Tiles.Count) continue;
@@ -159,8 +171,6 @@ public class Space : IScene
             }
         }
 
-        player.Draw(spriteBatch, playerTexture, camera);
-
         if(GameData.Package == true)
         {
             Vector2 ObjectM = _pixelfont.MeasureString($"{GameData.Base} Station, {GameData.Door} Door") * 0.75f;
@@ -168,5 +178,6 @@ public class Space : IScene
             spriteBatch.DrawString(_pixelfont, $"{GameData.Base} Station, {GameData.Door} Door", new Vector2((Width / 2) - (ObjectM.X / 2), (ObjectM.Y / 2) + 30), Color.White, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
         }
 
+        player.Draw(spriteBatch, playertexture2, camera);
     }
 }
