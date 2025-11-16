@@ -19,6 +19,7 @@ public class Station : IScene
 
     private Texture2D TileSet;
     private Texture2D playerTexture;
+    private SpriteFont _pixelfont;
 
     private TmxMap map;
     private List<Rectangle> solidTiles;
@@ -68,6 +69,7 @@ public class Station : IScene
 
         TileSet = _contentManager.Load<Texture2D>("tilesmap");
         playerTexture = _contentManager.Load<Texture2D>("playertexture2");
+        _pixelfont = _contentManager.Load<SpriteFont>("pixelfont");
 
         solidTiles = LoadCollisionObjects("Content/spacestation.tmx");
     }
@@ -76,6 +78,8 @@ public class Station : IScene
     {
         player.Update(gameTime, solidTiles, camera);
         camera.Follow(player.Position, new Vector2(map.Width * 64, map.Height * 64));
+
+        KeyboardState state = Keyboard.GetState();
 
         if(GameData.BackStation == true)
         {
@@ -88,7 +92,45 @@ public class Station : IScene
             _sceneManager.ChangeScene("space");
         }
 
-        Console.WriteLine(player.Position);
+
+        if(state.IsKeyDown(Keys.E))
+        {
+            if(Vector2.Distance(player.Position, new Vector2(540, 733)) < 64)
+            {
+                if(GameData.Base == GameData.Station && GameData.Door == "A" && GameData.Package == true)
+                {
+                    GameData.Package = false;
+                    GameData.PackageNum++;
+                }
+            }
+
+            if(Vector2.Distance(player.Position, new Vector2(733, 733)) < 64)
+            {
+                if(GameData.Base == GameData.Station && GameData.Door == "B" && GameData.Package == true)
+                {
+                    GameData.Package = false;
+                    GameData.PackageNum++;
+                }
+            }
+
+            if(Vector2.Distance(player.Position, new Vector2(927, 733)) < 64)
+            {
+                if(GameData.Base == GameData.Station && GameData.Door == "C" && GameData.Package == true)
+                {
+                    GameData.Package = false;
+                    GameData.PackageNum++;
+                }
+            }
+
+            if(Vector2.Distance(player.Position, new Vector2(1119, 733)) < 64)
+            {
+                if(GameData.Base == GameData.Station && GameData.Door == "D" && GameData.Package == true)
+                {
+                    GameData.Package = false;
+                    GameData.PackageNum++;
+                }
+            }
+        }
     }
 
     public void Draw(SpriteBatch spriteBatch)
@@ -132,5 +174,12 @@ public class Station : IScene
         }
 
         player.Draw(spriteBatch, playerTexture, camera);
+
+        if(GameData.Package == true)
+        {
+            Vector2 ObjectM = _pixelfont.MeasureString($"{GameData.Base} Station, {GameData.Door} Door") * 0.75f;
+
+            spriteBatch.DrawString(_pixelfont, $"{GameData.Base} Station, {GameData.Door} Door", new Vector2((Width / 2) - (ObjectM.X / 2), (ObjectM.Y / 2) + 30), Color.White, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
+        }
     }
 }

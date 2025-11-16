@@ -127,6 +127,7 @@ public class PostStation : IScene
 
         if(Vector2.Distance(player.Position, new Vector2(1248, 1501)) < 64)
         {
+            GameData.InSpace = true;
             _sceneManager.ChangeScene("space");
         }
     }
