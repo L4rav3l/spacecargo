@@ -183,6 +183,10 @@ public class Space : IScene
                 {
                     if(GameData.Code[0] == _code)
                     {
+                        _panel = false;
+                        _code = 0;
+                        GameData.BackStation = true;
+                        GameData.InSpace = false;
                         _sceneManager.ChangeScene("station");
                         GameData.Move = true;
                     }
@@ -191,6 +195,10 @@ public class Space : IScene
                 {
                     if(GameData.Code[1] == _code)
                     {
+                        _panel = false;
+                        _code = 0;
+                        GameData.BackStation = true;
+                        GameData.InSpace = false;
                         _sceneManager.ChangeScene("station");
                         GameData.Move = true;
                     }
@@ -199,6 +207,10 @@ public class Space : IScene
                 {
                     if(GameData.Code[2] == _code)
                     {
+                        _panel = false;
+                        _code = 0;
+                        GameData.BackStation = true;
+                        GameData.InSpace = false;
                         _sceneManager.ChangeScene("station");
                         GameData.Move = true;
                     }
@@ -207,6 +219,10 @@ public class Space : IScene
                 {
                     if(GameData.Code[3] == _code)
                     {
+                        _code = 0;
+                        GameData.BackStation = true;
+                        _panel = false;
+                        GameData.InSpace = false;
                         _sceneManager.ChangeScene("station");
                         GameData.Move = true;
                     }

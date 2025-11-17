@@ -52,7 +52,6 @@ public class StartGame : IScene
             for(int i = 0; i < 4; i++)
             {
                 GameData.Code[i] = rnd.Next(1000, 9999);
-                Console.WriteLine(GameData.Code[i]);
             }
 
             _sceneManager.AddScene(new Space(_graphics, _sceneManager, _contentManager), "space");

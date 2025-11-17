@@ -6,5 +6,6 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/playertexture2.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/playertexture2.png","CopyItem","File",937,937,0.0010875
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/poststation.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/poststation.tmx","CopyItem","File",6072,6072,0.0008126
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/space.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/space.tmx","CopyItem","File",15258,15258,0.001051
+"/home/marcellh/Dokumentumok/SpaceCargo/Content/spacestation.tmx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/spacestation.tmx","CopyItem","File",2625,2625,0.0008668
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/tileset.tsx","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/tileset.tsx","CopyItem","File",227,227,0.0003454
 "/home/marcellh/Dokumentumok/SpaceCargo/Content/tilesmap.png","/home/marcellh/Dokumentumok/SpaceCargo/Content/bin/DesktopGL/Content/tilesmap.png","CopyItem","File",20493,20493,0.0003251

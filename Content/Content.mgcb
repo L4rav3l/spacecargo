@@ -44,6 +44,9 @@
 #begin space.tmx
 /copy:space.tmx
 
+#begin spacestation.tmx
+/copy:spacestation.tmx
+
 #begin tileset.tsx
 /copy:tileset.tsx
 

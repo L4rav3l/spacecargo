@@ -38,7 +38,7 @@ public class EndMaffia : IScene
     {
         KeyboardState state = Keyboard.GetState();
 
-        if(state.IsKeyDown(Keys.E))
+        if(state.IsKeyDown(Keys.Q))
         {
             _sceneManager.ChangeScene("menu");
         }
@@ -61,6 +61,6 @@ public class EndMaffia : IScene
         spriteBatch.DrawString(_pixelfont, "The Laky's Mafia sent this\npackage, which contained\na pipe bomb. The pipe bomb\nexploded instantly when you\ndelivered it. You are dead.\nEnd 1.", new Vector2((Width / 2) - 250, (Height / 2) - 300), Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
     
         Vector2 NextM = _pixelfont.MeasureString("Press E button") * 0.75f;
-        spriteBatch.DrawString(_pixelfont, "Press E button", new Vector2((Width / 2) - (NextM.X / 2), ((Height / 4) * 3) - (NextM.Y / 2)), Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
+        spriteBatch.DrawString(_pixelfont, "Press Q button", new Vector2((Width / 2) - (NextM.X / 2), ((Height / 4) * 3) - (NextM.Y / 2)), Color.Black, 0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.2f);
     }
 }

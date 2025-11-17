@@ -17,6 +17,12 @@ public class Game1 : Game
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
         _sceneManager = new SceneManager();
+
+        _graphics.PreferredBackBufferWidth = 1920;
+        _graphics.PreferredBackBufferHeight = 1080;
+
+        _graphics.IsFullScreen = true;
+        _graphics.ApplyChanges();
     }
 
     protected override void Initialize()
@@ -48,6 +54,7 @@ public class Game1 : Game
 
         if(GameData.PackageNum == 5)
         {
+            GameData.PackageNum = 0;
             _sceneManager.ChangeScene("end-maffia");
         }
 
